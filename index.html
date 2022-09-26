@@ -11,28 +11,61 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+
     <title>Fritjof</title>
     <link href="css/styles.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-<h1 class="nav-bar">⚠Under construction⚠</h1>
+<!--
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-light" href="/">
+            <img src="favicon/android-chrome-512x512.png" alt="Logo" width="30" height="30"
+                 class="d-inline-block align-text-top">
+            Fritjof
+        </a>
+    </div>
+</nav>
+-->
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand text-black font-orbitron" href="#">Fritjof</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link text-black" href="pages/projects.html">Projects</a>
+                <a class="nav-link text-black" href="pages/aboutme.html">About me</a>
+                <a class="nav-link text-black" target="_blank" href="https://github.com/BredeFK">GitHub
+                    <img src="images/icons/github.svg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
+            </div>
+        </div>
+    </div>
+</nav>
 
 <header class="parallax">
     <div class="container">
-        <div>
-            <h1>Fritjof</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <div class="text-black">
+            <h1 class="font-orbitron">Fritjof</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <img src="images/BredeFK.jpg" class="avatar" alt="profile-picture"/>
     </div>
 </header>
 <div class="demo">
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
+    Welcome to my page!
+    It's not fully finished yet, you can see the sourcecode for this website on my GitHub page here:
+    <a href="https://github.com/BredeFK/bredefk.github.io" target="_blank" class="text-black">https://github.com/BredeFK/bredefk.github.io</a>
 </div>
 </body>
 </html>
