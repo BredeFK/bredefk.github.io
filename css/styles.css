@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
 
 .parallax {
     /* The image used */
-    background-image: url("/images/background-image.jpg");
+    background-image: url("/images/background-image.webp");
 
     /* Set a specific height */
     height: 80%;
