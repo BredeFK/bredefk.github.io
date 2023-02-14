@@ -16,11 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 
-    <title>Fritjof - About me</title>
+    <title>Difference Calculator</title>
     <link href="../css/styles.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/calculator.js"></script>
 </head>
 <body class="bgColor">
 <nav class="navbar navbar-expand-lg bg-light">
@@ -41,12 +42,27 @@
     </div>
 </nav>
 <div class="container">
-    <div class="alert alert-info" role="alert">
-        Under construction!
+    <h1 class="text-dark">Difference Calculator</h1>
+    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
+        <div class="card-body">
+            <h4 class="card-title">Percentage difference</h4>
+            <div class="form-group pt-3 pb-2">
+                <input id="valueA" type="number" placeholder="Value A" class="form-control"
+                       aria-describedby="numberHelp" oninput="getDifference()" autofocus/>
+            </div>
+            <div class="form-group py-2">
+                <input id="valueB" type="number" placeholder="Value B" class="form-control"
+                       aria-describedby="numberHelp" oninput="getDifference()">
+            </div>
+        </div>
+        <div id="percentageAnswer" class="card-footer p-3 hideElement">
+            <h5 id="percentageResult" class="font-monospace">
+            </h5>
+        </div>
+        <div id="diffAnswer" class="card-footer p-3 hideElement">
+            <h5 id="diffResult" class="font-monospace">
+            </h5>
+        </div>
     </div>
-    <h1 class="text-dark">About me</h1>
-    <p class="text-dark">Here's my photographs I have haning up in the office <a
-            href="https://labs.openai.com/sc/UQkNRJYhOyAYAygby1X6CdQE" target="_blank">https://labs.openai.com/sc/UQkNRJYhOyAYAygby1X6CdQE</a>
-    </p>
 </div>
 </body>
