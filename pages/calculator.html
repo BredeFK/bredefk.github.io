@@ -45,14 +45,35 @@
     <h1 class="text-dark">Difference Calculator</h1>
     <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
         <div class="card-body">
-            <h4 class="card-title">Percentage difference</h4>
+            <h4 class="card-title">Percentage Change</h4>
+            <div class="form-group pt-3 pb-2">
+                <input id="initialValue" type="number" placeholder="Initial value" class="form-control"
+                       aria-describedby="numberHelp" oninput="getDifference(true)" autofocus/>
+            </div>
+            <div class="form-group py-2">
+                <input id="finalValue" type="number" placeholder="Final value" class="form-control"
+                       aria-describedby="numberHelp" oninput="getDifference(true)">
+            </div>
+        </div>
+        <div id="percentageAnswerChange" class="card-footer p-3 hideElement">
+            <h5 id="percentageResultChange" class="font-monospace">
+            </h5>
+        </div>
+        <div id="diffAnswerChange" class="card-footer p-3 hideElement">
+            <h5 id="diffResultChange" class="font-monospace">
+            </h5>
+        </div>
+    </div>
+    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
+        <div class="card-body">
+            <h4 class="card-title">Percentage Difference</h4>
             <div class="form-group pt-3 pb-2">
                 <input id="valueA" type="number" placeholder="Value A" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference()" autofocus/>
+                       aria-describedby="numberHelp" oninput="getDifference(false)"/>
             </div>
             <div class="form-group py-2">
                 <input id="valueB" type="number" placeholder="Value B" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference()">
+                       aria-describedby="numberHelp" oninput="getDifference(false)">
             </div>
         </div>
         <div id="percentageAnswer" class="card-footer p-3 hideElement">
