@@ -21,8 +21,9 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/quote.js"></script>
 </head>
-<body>
+<body onload="getQuote()">
 
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -33,8 +34,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link text-black" href="pages/aboutme.html">About me</a>
                 <a class="nav-link text-black" href="pages/calculator.html">Calculator</a>
+                <a class="nav-link text-black" target="_blank" href="https://pp.fritjof.no/">Ping-pong
+                    <img src="images/icons/ping-pong.ico" alt="Ping Pong Racket" height="16" width="16"
+                         class="mb-1"></a>
                 <a class="nav-link text-black" target="_blank" href="https://github.com/BredeFK">GitHub
                     <img src="images/icons/github.svg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
             </div>
@@ -46,7 +49,7 @@
     <div class="container">
         <div class="text-black">
             <h1 class="font-orbitron">Fritjof</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p id="quote" title="Quote of the day"><i>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</i></p>
         </div>
         <img src="images/BredeFK.webp" class="avatar" alt="profile-picture" height="200" width="200"/>
     </div>
