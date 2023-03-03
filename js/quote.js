@@ -1,8 +1,9 @@
 async function getQuote() {
     let data = await getQuoteFromLocalStorage()
     const quoteElement = document.getElementById("quote")
+    const authorElement = document.getElementById("author")
     quoteElement.innerHTML = '<i>"' + data.quote + '"</i>'
-    quoteElement.title = "Quote of the day by " + data.author
+    authorElement.innerText = "--- " + data.author + " ---"
 }
 
 async function getQuoteOfTheDayFromQuotesRest() {
