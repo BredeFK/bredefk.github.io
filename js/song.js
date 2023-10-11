@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 card.className = 'card text-dark border-dark col-lg-8 col-sm-12 mx-auto mb-5';
 
                 const cardBody = document.createElement('div');
-                cardBody.className = 'card-body';
+                cardBody.className = 'card-body no-margin';
 
                 const cardTitle = document.createElement('h4');
                 cardTitle.className = 'card-title pb-2';
