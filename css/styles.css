@@ -63,3 +63,9 @@ body::-webkit-scrollbar {
 .bgColor {
     background-color: #cecece;
 }
+
+.song {
+    font-family: monospace;
+    overflow: auto;
+    line-height: 1.5em
+}

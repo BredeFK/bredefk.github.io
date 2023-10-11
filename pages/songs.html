@@ -16,12 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 
-    <title>Difference Calculator</title>
+    <title>Guitar Tabs</title>
     <link href="../css/styles.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/calculator.js"></script>
 </head>
 <body class="bgColor">
 <nav class="navbar navbar-expand-lg bg-light">
@@ -44,47 +43,15 @@
     </div>
 </nav>
 <div class="container">
-    <h1 class="text-dark">Difference Calculator</h1>
-    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
+    <h1 class="text-dark">Guitar Tabs</h1>
+    <h5 class="text-black">A collection of guitar tabs I've picked up from different places</h5>
+    <div class="card text-dark border-dark col-md-7 mx-auto mt-5">
         <div class="card-body">
-            <h4 class="card-title">Percentage Change</h4>
-            <div class="form-group pt-3 pb-2">
-                <input id="initialValue" type="number" placeholder="Initial value" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(true)" autofocus/>
+            <h4 class="card-title">Flåklypa</h4>
+            <div id="flaaklypa" class="song">
+                <div id="file-list"></div>
+                <script src="../js/song.js"></script>
             </div>
-            <div class="form-group py-2">
-                <input id="finalValue" type="number" placeholder="Final value" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(true)">
-            </div>
-        </div>
-        <div id="percentageAnswerChange" class="card-footer p-3 hideElement">
-            <h5 id="percentageResultChange" class="font-monospace">
-            </h5>
-        </div>
-        <div id="diffAnswerChange" class="card-footer p-3 hideElement">
-            <h5 id="diffResultChange" class="font-monospace">
-            </h5>
-        </div>
-    </div>
-    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
-        <div class="card-body">
-            <h4 class="card-title">Percentage Difference</h4>
-            <div class="form-group pt-3 pb-2">
-                <input id="valueA" type="number" placeholder="Value A" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(false)"/>
-            </div>
-            <div class="form-group py-2">
-                <input id="valueB" type="number" placeholder="Value B" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(false)">
-            </div>
-        </div>
-        <div id="percentageAnswer" class="card-footer p-3 hideElement">
-            <h5 id="percentageResult" class="font-monospace">
-            </h5>
-        </div>
-        <div id="diffAnswer" class="card-footer p-3 hideElement">
-            <h5 id="diffResult" class="font-monospace">
-            </h5>
         </div>
     </div>
 </div>
