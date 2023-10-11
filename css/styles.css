@@ -65,7 +65,13 @@ body::-webkit-scrollbar {
 }
 
 .song {
+    color: black;
     font-family: monospace;
     overflow: auto;
-    line-height: 1.5em
+    line-height: 1.1em
+}
+
+ul{
+    display: table;
+    margin: 0 auto;
 }
