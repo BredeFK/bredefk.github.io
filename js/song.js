@@ -7,7 +7,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const songFiles = [
         'flaaklypa.guitar',
         'skyrim.guitar',
-        'seven_nation_army.guitar'
+        'seven_nation_army.guitar',
+        'tetris.guitar'
     ];
 
     // Function to load and display the content of a text file
