@@ -5,8 +5,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // List of known text files
     const songFiles = [
-        'flaaklypa.txt',
-        'skyrim.txt'
+        'flaaklypa.guitar',
+        'skyrim.guitar',
+        'seven_nation_army.guitar'
     ];
 
     // Function to load and display the content of a text file
