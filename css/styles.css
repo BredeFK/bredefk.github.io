@@ -42,8 +42,23 @@ body::-webkit-scrollbar {
 .demo {
     height: 1000px;
     background-color: #535c54;
-    font-size: 36px;
     padding: 30px;
+    color: black;
+}
+
+.demo-title {
+    font-size: 36px;
+}
+
+.a-white {
+    color: white;
+}
+
+.a-white:hover {
+    color: darkgrey;
+}
+
+.a-white:active {
     color: black;
 }
 
@@ -91,6 +106,12 @@ div.card {
     }
 
     div.card {
+        padding-left: 5px;
+        padding-top: 10px;
+    }
+
+    #file-list {
+        padding-right: 5px;
         padding-left: 5px;
     }
 
