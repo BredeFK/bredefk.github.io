@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         'flaaklypa.guitar',
         'skyrim.guitar',
         'seven_nation_army.guitar',
-        'tetris.guitar'
+        'tetris.guitar',
+        'wii_channel_theme.guitar'
     ];
 
     // Function to load and display the content of a text file
@@ -34,6 +35,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                 cardBody.appendChild(cardTitle);
                 cardBody.appendChild(songDiv);
+
+                /*
+                let videoId = getVideoId(data)
+                if (videoId !== null) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube.com/embed/${videoId}`
+                    iframe.className = 'video';
+                    cardBody.appendChild(iframe);
+                }
+                 */
+
+
                 card.appendChild(cardBody);
 
                 // Dynamically adjust card size based on content length
@@ -54,6 +67,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 fileList.insertAdjacentHTML('beforeend', `<li>Error loading ${songName}.</li>`);
                 console.error(error);
             });
+    }
+
+    function getVideoId(content) {
+        if (content.includes('youtube')) {
+            let lines = content.split('\n')
+            let lastLine = lines[lines.length - 1]
+            let id = lastLine.split('?v=')
+
+            return id[1]
+        } else return null
     }
 
     function convertDisplayName(filename) {

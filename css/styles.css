@@ -95,6 +95,11 @@ div.card {
     background-color: lightblue;
 }
 
+.video {
+    height: 304px;
+    width: 540px;
+}
+
 
 @media only screen and (max-width: 800px) {
     .song {
@@ -113,6 +118,11 @@ div.card {
     #file-list {
         padding-right: 5px;
         padding-left: 5px;
+    }
+
+    .video {
+        height: 169px;
+        width: 300px;
     }
 
 }
