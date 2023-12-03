@@ -1,0 +1,31 @@
+body {
+    background-color: #0f0f23;
+    height: 100%;
+}
+
+.greenColor {
+    color: #009900;
+}
+
+
+#watch {
+    font-size: 3vw;
+    color: #cccccc;
+    outline: 0;
+    text-decoration: none;
+    font-family: "Fira Code i", monospace;
+
+}
+
+#rotations {
+    cursor: help;
+    font-size: 1vw;
+    font-family: "Fira Code i", monospace;
+    color: #cccccc;
+}
+
+/*
+
+ Design is inspired by https://adventofcode.com/ by Eric Wastl
+
+ */
