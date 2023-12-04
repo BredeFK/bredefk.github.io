@@ -39,11 +39,11 @@ function rotationsAroundTheWorld() {
     let days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 365
 
     let yearsAndDay = years + (days / daysToOrbitTheSun)
-    let numberOfOrbits = (daysToOrbitTheSun * yearsAndDay) / daysToOrbitTheSun
+    let numberOfOrbits = (daysToOrbitTheSun * yearsAndDay) / 365
     const rotations = document.getElementById("rotations")
     rotations.innerHTML = `<span class="greenColor">${numberOfOrbits}</span> orbits around the sun`
-    rotations.title = `(Days to orbit the sun * years and days you've lived) / Days to orbit the sun` +
-        `\n(${daysToOrbitTheSun} * ${yearsAndDay}) / ${daysToOrbitTheSun}`
+    rotations.title = `(Days to orbit the sun * years and days you've lived) / 365` +
+        `\n(${daysToOrbitTheSun} * ${yearsAndDay}) / ${365}`
 
 }
 
