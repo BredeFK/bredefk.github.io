@@ -13,9 +13,19 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.avatar {
+#avatar {
     border-radius: 50%;
-    max-height: 200px;
+    background-image: url('/images/BredeFK.webp');
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#avatar:hover {
+    background-image: url('/images/santa.png');
 }
 
 .parallax {
