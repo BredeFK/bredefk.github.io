@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
 
 #avatar {
     border-radius: 50%;
-    background-image: url('/images/BredeFK.webp');
+    background-image: url('/images/BredeFK_2.webp');
     background-position: center;
     background-size: cover;
     height: 200px;
@@ -25,7 +25,7 @@ body::-webkit-scrollbar {
 }
 
 #avatar:hover {
-    background-image: url('/images/santa.png');
+    background-image: url('/images/BredeFK.webp');
 }
 
 .parallax {
