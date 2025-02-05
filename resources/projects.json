@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "client": 1,
+      "title": "Bachelor's degree",
+      "role": "Backend developer",
+      "shortDescription": "A short description of the project goes here.",
+      "fullDescription": "A longer desciprion goes here",
+      "technologies": [
+        "Go",
+        "HTML",
+        "Javascript",
+        "CSS",
+        "Docker",
+        "Microservices"
+      ],
+      "year": 2019
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "NTNU",
+      "image": "clients/NTNU_logo.svg",
+      "website": "https://www.ntnu.no/"
+    }
+  ]
+}
