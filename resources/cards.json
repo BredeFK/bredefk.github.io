@@ -1,0 +1,40 @@
+{
+  "cards": [
+    {
+      "title": "Projects",
+      "description": "Showcasing my portfolio and work.",
+      "link": "pages/projects.html",
+      "btnText": "View"
+    },
+    {
+      "title": "Bomb Game",
+      "description": "A fun ticking bomb game.",
+      "link": "pages/ticking-bomb-game.html",
+      "btnText": "Play"
+    },
+    {
+      "title": "Calculator",
+      "description": "Calculate percentages easily.",
+      "link": "pages/calculator.html",
+      "btnText": "Use"
+    },
+    {
+      "title": "Songs",
+      "description": "Guitar tabs for easy playing.",
+      "link": "pages/songs.html",
+      "btnText": "Explore"
+    },
+    {
+      "title": "Er det tirsdag?",
+      "description": "Check if it's Tuesday!",
+      "link": "https://www.erdettirsdag.eu/",
+      "btnText": "Check"
+    },
+    {
+      "title": "Source Code",
+      "description": "View my website's source code.",
+      "link": "https://github.com/BredeFK/bredefk.github.io",
+      "btnText": "GitHub"
+    }
+  ]
+}

@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
     background-image: url("/resources/images/background-image.webp");
 
     /* Set a specific height */
-    height: 80%;
+    height: 75%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -110,6 +110,27 @@ div.card {
     width: 540px;
 }
 
+/* TODO : Merge these four classes in to two classes */
+.card button.btn-dark-blue {
+    background-color: #547EA8;
+    color: black
+}
+
+.card a.btn-dark-blue {
+    background-color: #547EA8;
+    color: black
+}
+
+.card button.btn-dark-blue:hover {
+    background-color: #436486;
+    color: black
+}
+
+.card a.btn-dark-blue:hover {
+    background-color: #436486;
+    color: black
+}
+
 
 @media only screen and (max-width: 800px) {
     .song {
@@ -133,6 +154,10 @@ div.card {
     .video {
         height: 169px;
         width: 300px;
+    }
+
+    .btn-dark-blue {
+        margin-bottom: 15px;
     }
 
 }
@@ -175,8 +200,14 @@ div.card {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 

@@ -20,6 +20,7 @@
     <link href="css/styles.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -27,22 +28,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand text-black font-orbitron" href="#">Fritjof</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link text-black" href="pages/projects.html">Projects</a>
-                <a class="nav-link text-black" href="pages/ticking-bomb-game.html">Bomb-Game</a>
-                <a class="nav-link text-black" href="pages/calculator.html">Calculator</a>
-                <a class="nav-link text-black" href="pages/songs.html">Songs</a>
-                <a class="nav-link text-black" target="_blank" href="https://www.erdettirsdag.eu/">Er-det-tirsdag?
-                    <img src="resources/images/icons/tuesday.jpg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
-                <a class="nav-link text-black" target="_blank" href="https://github.com/BredeFK/bredefk.github.io">Source
-                    <img src="resources/images/icons/github.svg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
-            </div>
-        </div>
     </div>
 </nav>
 
@@ -56,9 +41,9 @@
 </header>
 <div class="demo text-center">
     <h1 class="demo-title">Welcome to my page!</h1>
-    <p>
-        Check out my latest addition to my website: <a class="a-white" href="pages/songs.html">Songs</a>
-    </p>
+    <div id="cards" class="row row-cols-1 row-cols-md-3 g-4 mt-1"></div>
 </div>
+
+
 </body>
 </html>

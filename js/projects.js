@@ -16,12 +16,12 @@ function displayProjects(projects, clients) {
         card.classList.add("col-md-4", "mb-4");
 
         card.innerHTML = `
-            <div class="card text-dark border-dark">
+            <div class="card text-white border-dark bg-dark">
                 <div class="card-body">
                     <h5 class="card-title">${project.title}</h5>
                     <h6 class="text-muted">${project.role} @ ${client ? client.name : "Unknown Client"}</h6>
                     <p class="card-text">${project.shortDescription}</p>
-                    <button class="btn btn-primary" onclick="toggleDetails(this)">More Info</button>
+                    <button class="btn btn-dark-blue" onclick="toggleDetails(this)">More Info</button>
                     <div class="details" style="display: none;">
                         <p>${project.fullDescription}</p>
                         <p><strong>Technologies:</strong> ${project.technologies.join(", ")}</p>
