@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -16,15 +16,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 
-    <title>Difference Calculator</title>
+    <title>Ticking Bomb Game</title>
+
     <link href="../css/styles.css" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/projects.js"></script>
 
 </head>
-<body class="bgColor">
+<body id="ticking-bomb-game-body">
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand text-black font-orbitron" href="/">Fritjof</a>
@@ -39,18 +38,34 @@
                 <a class="nav-link text-black" href="calculator.html">Calculator</a>
                 <a class="nav-link text-black" href="songs.html">Songs</a>
                 <a class="nav-link text-black" target="_blank" href="https://www.erdettirsdag.eu/">Er-det-tirsdag?
-                    <img src="../resources/images/icons/tuesday.jpg" alt="Github logo" height="16" width="16"
-                         class="mb-1"/></a>
+                    <img src="../resources/images/icons/tuesday.jpg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
                 <a class="nav-link text-black" target="_blank" href="https://github.com/BredeFK/bredefk.github.io">Source
-                    <img src="../resources/images/icons/github.svg" alt="Github logo" height="16" width="16"
-                         class="mb-1"/></a>
+                    <img src="../resources/images/icons/github.svg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
             </div>
         </div>
     </div>
 </nav>
-<div class="container">
-    <h1 class="text-dark">Projects I have worked on</h1>
-    <div id="projectsContainer" class="row"></div>
-</div>
-</body>
 
+<div class="container text-center">
+    <h1 id="bomb-title" class="text-light mt-5">Ticking Bomb Game</h1>
+    <h5>Pass the bomb before it explodes</h5>
+
+    <div class="card bg-dark border-primary col-md-4 mx-auto mt-5">
+        <div class="card-body">
+            <h4 class="card-title text-primary">Pass the Bomb</h4>
+            <p id="description">Click on start or press space to start
+                <br>You can also press space to pass the bomb.
+            <br>A small amount of time is added for each time the passing button is clicked</p>
+            <button id="startButton" class="btn btn-success btn-lg mt-3">Start Game</button>
+            <button id="passButton" class="btn btn-primary btn-lg mt-3 d-none">Pass the Bomb</button>
+            <button id="restartButton" class="btn btn-danger btn-lg mt-3 d-none">Restart</button>
+        </div>
+    </div>
+</div>
+
+<audio id="buzzer" src="../resources/audio/buzzer.mp3" preload="auto"></audio>
+<audio id="ticking" src="../resources/audio/ticking-60s.mp3" preload="auto"></audio>
+<script src="../js/ticking-bomb-game.js"></script>
+
+</body>
+</html>

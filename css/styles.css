@@ -136,3 +136,47 @@ div.card {
     }
 
 }
+
+#ticking-bomb-game-body {
+    background-color: #121212;
+    color: white;
+}
+
+#bomb-title {
+    font-family: 'Orbitron', sans-serif;
+}
+
+#timer {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#passButton {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.2rem;
+}
+
+#passButton:disabled {
+    background-color: #ff3333;
+    border-color: #ff3333;
+    cursor: not-allowed;
+}
+
+/* Button Fade-Out */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Button Pulse Effect */
+.pulse-animation {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
