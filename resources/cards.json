@@ -7,12 +7,6 @@
       "btnText": "View"
     },
     {
-      "title": "Bomb Game",
-      "description": "A fun ticking bomb game.",
-      "link": "pages/ticking-bomb-game.html",
-      "btnText": "Play"
-    },
-    {
       "title": "Calculator",
       "description": "Calculate steps easily.",
       "link": "pages/calculator.html",
@@ -23,6 +17,12 @@
       "description": "Guitar tabs for easy playing.",
       "link": "pages/songs.html",
       "btnText": "Explore"
+    },
+    {
+      "title": "Bomb Game",
+      "description": "A fun ticking bomb game.",
+      "link": "pages/ticking-bomb-game.html",
+      "btnText": "Play"
     },
     {
       "title": "Er det tirsdag?",
