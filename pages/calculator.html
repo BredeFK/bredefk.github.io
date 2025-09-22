@@ -38,15 +38,44 @@
                 <a class="nav-link text-black" href="calculator.html">Calculator</a>
                 <a class="nav-link text-black" href="songs.html">Songs</a>
                 <a class="nav-link text-black" target="_blank" href="https://www.erdettirsdag.eu/">Er-det-tirsdag?
-                    <img src="../resources/images/icons/tuesday.jpg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
+                    <img src="../resources/images/icons/tuesday.jpg" alt="Github logo" height="16" width="16"
+                         class="mb-1"/></a>
                 <a class="nav-link text-black" target="_blank" href="https://github.com/BredeFK/bredefk.github.io">Source
-                    <img src="../resources/images/icons/github.svg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
+                    <img src="../resources/images/icons/github.svg" alt="Github logo" height="16" width="16"
+                         class="mb-1"/></a>
             </div>
         </div>
     </div>
 </nav>
 <div class="container">
-    <h1 class="text-dark">Difference Calculator</h1>
+    <h1 class="text-dark">Steps Calculator</h1>
+    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
+        <div class="card-body">
+            <h4 class="card-title">Steps to Km</h4>
+            <div class="form-group pt-3 pb-2">
+                <input id="stepsValue" type="number" placeholder="Number of steps" class="form-control"
+                       aria-describedby="numberHelp" oninput="getKilometers()" autofocus/>
+            </div>
+        </div>
+        <div id="stepsInKmAnswer" class="card-footer p-3 hideElement">
+            <h5 id="stepsInKmChange" class="font-monospace">
+            </h5>
+        </div>
+    </div>
+    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
+        <div class="card-body">
+            <h4 class="card-title">Km to steps</h4>
+            <div class="form-group pt-3 pb-2">
+                <input id="kmValue" type="number" placeholder="Kilometers" class="form-control"
+                       aria-describedby="numberHelp" oninput="getSteps()" autofocus/>
+            </div>
+        </div>
+        <div id="kmFromStepsAnswer" class="card-footer p-3 hideElement">
+            <h5 id="kmFromStepsChange" class="font-monospace">
+            </h5>
+        </div>
+    </div>
+    <h1 class="text-dark mt-5">Difference Calculator</h1>
     <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
         <div class="card-body">
             <h4 class="card-title">Percentage Change</h4>

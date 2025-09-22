@@ -1,3 +1,5 @@
+const norwegian = new Intl.NumberFormat('no-NO');
+
 function getDifference(isChange) {
     let firstValue, secondValue, firstFooter, secondFooter, firstResult, secondResult = ""
     if (isChange) {
@@ -22,10 +24,30 @@ function getDifference(isChange) {
     if (valueA && valueB) {
         let ans = (isChange) ? getChange(valueA, valueB) : getDifference2(valueA, valueB);
         showAnswer(firstFooter, firstResult, "The percentage " + ((isChange) ? "change" : "difference") + " is " + ans);
-        showAnswer(secondFooter, secondResult, "The difference is " + Math.abs(valueA - valueB));
+        showAnswer(secondFooter, secondResult, "The difference is " + prettyPrintNumber(Math.abs(valueA - valueB)));
     } else {
         hideAnswer(firstFooter);
         hideAnswer(secondFooter);
+    }
+}
+
+function getKilometers() {
+    const numberOfSteps = parseInt(document.getElementById("stepsValue").value);
+    const stepsInKilometers = ((numberOfSteps * 0.78) / 1000).toFixed(2);
+    if (numberOfSteps !== undefined && numberOfSteps > 0) {
+        showAnswer("stepsInKmAnswer", "stepsInKmChange", prettyPrintNumber(stepsInKilometers) + " km");
+    } else {
+        hideAnswer("stepsInKmAnswer");
+    }
+}
+
+function getSteps() {
+    const kilometers = parseInt(document.getElementById("kmValue").value);
+    const numberOfSteps = ((kilometers * 1000) / 0.78).toFixed(0);
+    if (kilometers !== undefined && kilometers > 0) {
+        showAnswer("kmFromStepsAnswer", "kmFromStepsChange", prettyPrintNumber(numberOfSteps) + " steps");
+    } else {
+        hideAnswer("kmFromStepsAnswer");
     }
 }
 
@@ -48,4 +70,8 @@ function getDifference2(value1, value2) {
 
 function getChange(value1, value2) {
     return (100 * ((value2 - value1) / value1)).toFixed(2) + "%";
+}
+
+function prettyPrintNumber(number) {
+    return norwegian.format(number).replace(",", ".");
 }
