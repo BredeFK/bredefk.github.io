@@ -9,7 +9,7 @@ function displayCards(cards) {
     const container = document.getElementById("cards");
     container.innerHTML = "";
 
-    cards.forEach(card => {
+    cards.slice(1).forEach(card => {
         const cardBody = document.createElement("div");
         cardBody.classList.add("col");
 

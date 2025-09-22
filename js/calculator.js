@@ -42,9 +42,9 @@ function getKilometers() {
 }
 
 function getSteps() {
-    const kilometers = parseInt(document.getElementById("kmValue").value);
-    const numberOfSteps = ((kilometers * 1000) / 0.78).toFixed(0);
-    if (kilometers !== undefined && kilometers > 0) {
+    const kilometers = parseFloat(document.getElementById("kmValue").value);
+    const numberOfSteps = ((kilometers * 1000.0) / 0.78).toFixed(0);
+    if (kilometers !== undefined && kilometers > 0.0) {
         showAnswer("kmFromStepsAnswer", "kmFromStepsChange", prettyPrintNumber(numberOfSteps) + " steps");
     } else {
         hideAnswer("kmFromStepsAnswer");
