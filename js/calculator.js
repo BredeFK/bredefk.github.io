@@ -33,7 +33,8 @@ function getDifference(isChange) {
 
 function getKilometers() {
     const numberOfSteps = parseInt(document.getElementById("stepsValue").value);
-    const stepsInKilometers = ((numberOfSteps * 0.78) / 1000).toFixed(2);
+    const stepLength = getStepLength();
+    const stepsInKilometers = ((numberOfSteps * stepLength) / 1000).toFixed(2);
     if (numberOfSteps !== undefined && numberOfSteps > 0) {
         showAnswer("stepsInKmAnswer", "stepsInKmChange", prettyPrintNumber(stepsInKilometers) + " km");
     } else {
@@ -43,7 +44,8 @@ function getKilometers() {
 
 function getSteps() {
     const kilometers = parseFloat(document.getElementById("kmValue").value);
-    const numberOfSteps = ((kilometers * 1000.0) / 0.78).toFixed(0);
+    const stepLength = getStepLength();
+    const numberOfSteps = ((kilometers * 1000.0) / stepLength).toFixed(0);
     if (kilometers !== undefined && kilometers > 0.0) {
         showAnswer("kmFromStepsAnswer", "kmFromStepsChange", prettyPrintNumber(numberOfSteps) + " steps");
     } else {
@@ -74,4 +76,13 @@ function getChange(value1, value2) {
 
 function prettyPrintNumber(number) {
     return norwegian.format(number).replace(",", ".");
+}
+
+function toggleRunningStepLength() {
+    getKilometers();
+    getSteps();
+}
+
+function getStepLength() {
+    return document.getElementById("isRunning").checked ? 1.05 : 0.78;
 }

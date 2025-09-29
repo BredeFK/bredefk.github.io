@@ -13,6 +13,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+#isRunning:hover {
+    cursor: pointer;
+}
+
 #avatar {
     border-radius: 50%;
     background-image: url('/resources/images/BredeFK_2.webp');

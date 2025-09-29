@@ -48,8 +48,16 @@
     </div>
 </nav>
 <div class="container">
-    <h1 class="text-dark">Steps Calculator</h1>
-    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
+    <h1 class="text-dark mb-2">Steps Calculator</h1>
+    <div class="col-md-4 mx-auto">
+        <input id="isRunning" type="checkbox" class="form-check-input" title="Use running step length"
+               onclick="toggleRunningStepLength()">
+        <label for="isRunning" class="text-dark">Running step length</label>
+        <br>
+        <small class="text-dark">*<i>The conversion between steps and kilometers is based on an average male walking
+            step length of 0.78 meters, and my own measured average running step length of 1.05 meters.</i></small>
+    </div>
+    <div class="card text-dark border-dark col-md-4 mx-auto mt-4">
         <div class="card-body">
             <h4 class="card-title">Steps to Km</h4>
             <div class="form-group pt-3 pb-2">
