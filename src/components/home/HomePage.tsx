@@ -13,7 +13,7 @@ export default function HomePage() {
 function UserProfile() {
     return (
         <Flex direction="column" align="center" justify="center" gap="4">
-            <Text size="8" weight="bold">
+            <Text size="8" weight="bold" className='font-orbitron'>
                 Brede Fritjof Klausen
             </Text>
             <img src={require('../../assets/profile.webp')} alt="Profile" className='profile-image'/>
