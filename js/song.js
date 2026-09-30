@@ -1,100 +1,87 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+function renderSong(data) {
+    const notesBefore = [];
+    const notesAfter = [];
+    const tabLines = [];
+    let columns = 0;
+
+    data.split('\n').forEach(line => {
+        if (line.trim().startsWith('<')) {
+            (tabLines.length === 0 ? notesBefore : notesAfter).push(`<p class="song-note">${line}</p>`);
+        } else {
+            columns = Math.max(columns, line.trimEnd().length);
+            tabLines.push(highlightFrets(line));
+        }
+    });
+
+    while (tabLines.length > 0 && tabLines.at(-1).trim() === '') {
+        tabLines.pop();
+    }
+    while (tabLines.length > 0 && tabLines[0].trim() === '') {
+        tabLines.shift();
+    }
+
+    return notesBefore.join('') + `<pre style="--columns: ${columns}">${tabLines.join('\n')}</pre>` + notesAfter.join('');
+}
+
+function highlightFrets(line) {
+    const isStringLine = /^\s*[A-Ga-g][#b]?\|/.test(line);
+    return isStringLine ? line.replaceAll(/\d+/g, '<span class="fret">$&</span>') : line;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
     const fileList = document.getElementById('file-list');
     const tocContainer = document.getElementById('table-of-contents');
 
 
     // List of known text files
-    const songFiles = [
-        'flaaklypa.guitar',
-        'skyrim.guitar',
-        'seven_nation_army.guitar',
-        'tetris.guitar',
-        'wii_channel_theme.guitar'
+    const songs = [
+        {file: 'flaaklypa.guitar', title: 'Flåklypa'},
+        {file: 'skyrim.guitar', title: 'Skyrim'},
+        {file: 'seven_nation_army.guitar', title: 'Seven nation army'},
+        {file: 'tetris.guitar', title: 'Tetris'},
+        {file: 'wii_channel_theme.guitar', title: 'Wii channel theme'}
     ];
 
+    const accentColors = ['#7fa6cc', '#7cc49a', '#e0b25c', '#e08a9b', '#b39ddb', '#6cc5c9'];
+
     // Function to load and display the content of a text file
-    function displayTextFileContent(songName) {
-        fetch(`../tabs/${songName}`)
+    function displayTextFileContent({file, title}, index) {
+        const card = document.createElement('div');
+        fileList.appendChild(card);
+
+        fetch(`../tabs/${file}`)
             .then(response => response.text())
             .then(data => {
-                const songContent = `<pre>${data}</pre>`;
-                const card = document.createElement('div');
-                card.className = 'card text-dark border-dark col-lg-8 col-sm-12 mx-auto mb-5';
+                const songContent = renderSong(data);
+                card.id = file.split('.')[0];
+                card.className = 'card song-card mb-4';
+                card.style.setProperty('--accent', accentColors[index % accentColors.length]);
 
                 const cardBody = document.createElement('div');
-                cardBody.className = 'card-body no-margin';
+                cardBody.className = 'card-body';
 
-                const cardTitle = document.createElement('h4');
-                cardTitle.className = 'card-title pb-2';
-                cardTitle.innerHTML = convertDisplayName(songName);
+                const cardTitle = document.createElement('h2');
+                cardTitle.className = 'song-title';
+                cardTitle.textContent = title;
 
                 const songDiv = document.createElement('div');
-                songDiv.id = songName.split('.')[0];
                 songDiv.className = 'song';
                 songDiv.innerHTML = songContent;
 
                 cardBody.appendChild(cardTitle);
                 cardBody.appendChild(songDiv);
-
-                /*
-                let videoId = getVideoId(data)
-                if (videoId !== null) {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = `https://www.youtube.com/embed/${videoId}`
-                    iframe.className = 'video';
-                    cardBody.appendChild(iframe);
-                }
-                 */
-
-
                 card.appendChild(cardBody);
-
-                // Dynamically adjust card size based on content length
-                const contentHeight = songDiv.clientHeight;
-                const minHeight = 100;
-                const maxHeight = 600;
-
-                if (contentHeight > minHeight && contentHeight < maxHeight) {
-                    card.style.height = `${contentHeight}px`;
-                } else if (contentHeight >= maxHeight) {
-                    card.style.height = `${maxHeight}px`;
-                }
-
-                fileList.appendChild(card);
-
             })
             .catch(error => {
-                fileList.insertAdjacentHTML('beforeend', `<li>Error loading ${songName}.</li>`);
+                fileList.insertAdjacentHTML('beforeend', `<p>Error loading ${title}.</p>`);
                 console.error(error);
             });
     }
 
-    function getVideoId(content) {
-        if (content.includes('youtube')) {
-            let lines = content.split('\n')
-            let lastLine = lines[lines.length - 1]
-            let id = lastLine.split('?v=')
-
-            return id[1]
-        } else return null
-    }
-
-    function convertDisplayName(filename) {
-        let displayName = filename.split('.')[0]
-
-        displayName = displayName.replaceAll("ae", "&#229;")
-        displayName = displayName.replaceAll("oe", "&#248;")
-        displayName = displayName.replaceAll("aa", "&#229;")
-        displayName = displayName.replaceAll("_", " ")
-
-        return displayName[0].toUpperCase() + displayName.substring(1, displayName.length)
-    }
-
     function generateTableOfContents() {
         const tocList = document.createElement('ul');
-        songFiles.forEach(fileName => {
-            const displayName = convertDisplayName(fileName);
-            tocList.innerHTML += `<li><a href="#${fileName.split('.')[0]}">${displayName}</a></li>`;
+        songs.forEach(({file, title}, index) => {
+            tocList.innerHTML += `<li><a href="#${file.split('.')[0]}" style="--accent: ${accentColors[index % accentColors.length]}">${title}</a></li>`;
         });
 
         tocContainer.appendChild(tocList);
@@ -102,7 +89,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     generateTableOfContents()
 
-    songFiles.forEach(fileName => {
-        displayTextFileContent(fileName);
-    });
+    songs.forEach(displayTextFileContent);
 });

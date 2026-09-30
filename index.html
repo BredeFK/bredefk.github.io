@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Fritjof's Homepage">
     <meta name="author" content="Brede Fritjof Klausen">
 
-    <link id="favicon1" rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link id="favicon2" rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link id=favicon3" rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link id="manifest" rel="manifest" href="favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,32 +17,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 
     <title>Fritjof</title>
-    <link href="css/styles.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/index.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main">
     <div class="container-fluid">
-        <a class="navbar-brand text-black font-orbitron" href="#">Fritjof</a>
+        <a class="navbar-brand font-orbitron" href="#">Fritjof</a>
     </div>
 </nav>
 
 <header class="parallax">
     <div class="container">
-        <div class="text-black">
-            <h1 class="font-orbitron mb-3 mt-3">Brede Fritjof Klausen</h1>
-        </div>
-        <div id="avatar"></div>
+        <h1 class="hero-name font-orbitron mb-4 mt-3">Brede Fritjof Klausen</h1>
+        <img id="avatar" src="resources/images/me.webp" alt="Brede Fritjof Klausen">
     </div>
 </header>
-<div class="demo text-center">
-    <h1 class="demo-title">Welcome to my page!</h1>
-    <div id="cards" class="row row-cols-1 row-cols-md-3 g-4 mt-1"></div>
-</div>
+<main class="demo text-center">
+    <h2 class="demo-title">Welcome to my page!</h2>
+    <div id="cards" class="row row-cols-1 row-cols-md-2 g-4 mt-1 mx-auto">
+        <div class="col">
+            <a href="pages/calculator.html" class="card h-100 text-decoration-none" style="--accent: #7fa6cc">
+                <div class="card-body">
+                    <h5 class="card-title">Calculator</h5>
+                    <p class="card-text text-body-secondary mb-0">Convert steps and kilometers, and work with percentages.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="pages/songs.html" class="card h-100 text-decoration-none" style="--accent: #7cc49a">
+                <div class="card-body">
+                    <h5 class="card-title">Songs</h5>
+                    <p class="card-text text-body-secondary mb-0">Guitar tabs I've collected, from Flåklypa to the Wii theme.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="https://www.erdettirsdag.eu/" target="_blank" rel="noopener" class="card h-100 text-decoration-none" style="--accent: #e0b25c">
+                <div class="card-body">
+                    <h5 class="card-title">Er det tirsdag? <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></h5>
+                    <p class="card-text text-body-secondary mb-0">A little site I made that tells you if it's Tuesday.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="https://github.com/BredeFK/bredefk.github.io" target="_blank" rel="noopener" class="card h-100 text-decoration-none" style="--accent: #e08a9b">
+                <div class="card-body">
+                    <h5 class="card-title">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></h5>
+                    <p class="card-text text-body-secondary mb-0">The source code for this website.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>
 
 
 </body>

@@ -1,130 +1,175 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Fritjof's Homepage">
     <meta name="author" content="Brede Fritjof Klausen">
 
-    <link id="favicon1" rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-    <link id="favicon2" rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-    <link id=favicon3" rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-    <link id="manifest" rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 
-    <title>Difference Calculator</title>
-    <link href="../css/styles.css" rel="stylesheet">
+    <title>Calculators</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link href="../css/styles.css" rel="stylesheet">
     <script src="../js/calculator.js"></script>
 </head>
-<body class="bgColor">
-<nav class="navbar navbar-expand-lg bg-light">
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main">
     <div class="container-fluid">
-        <a class="navbar-brand text-black font-orbitron" href="/">Fritjof</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        <a class="navbar-brand font-orbitron" href="/">Fritjof</a>
+        <button class="navbar-toggler" type="button"
+                onclick="this.setAttribute('aria-expanded', document.getElementById('navbarNavAltMarkup').classList.toggle('show'))"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link text-black" href="projects.html">Projects</a>
-                <a class="nav-link text-black" href="ticking-bomb-game.html">Bomb-Game</a>
-                <a class="nav-link text-black" href="calculator.html">Calculator</a>
-                <a class="nav-link text-black" href="songs.html">Songs</a>
-                <a class="nav-link text-black" target="_blank" href="https://www.erdettirsdag.eu/">Er-det-tirsdag?
-                    <img src="../resources/images/icons/tuesday.jpg" alt="Github logo" height="16" width="16"
-                         class="mb-1"/></a>
-                <a class="nav-link text-black" target="_blank" href="https://github.com/BredeFK/bredefk.github.io">Source
-                    <img src="../resources/images/icons/github.svg" alt="Github logo" height="16" width="16"
-                         class="mb-1"/></a>
+                <a class="nav-link active" aria-current="page"
+                   href="calculator.html">Calculator</a>
+                <a class="nav-link" href="songs.html">Songs</a>
+            </div>
+            <div class="navbar-nav ms-lg-auto">
+                <a class="nav-link" target="_blank" rel="noopener" href="https://www.erdettirsdag.eu/">
+                    <img src="../resources/images/icons/tuesday.png" alt="" height="16" width="16" class="mb-1 me-1"/>Er det tirsdag?
+                    <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></a>
+                <a class="nav-link" target="_blank" rel="noopener" href="https://github.com/BredeFK/bredefk.github.io">
+                    <img src="../resources/images/icons/github.svg" alt="" height="16" width="16" class="mb-1 me-1"/>GitHub
+                    <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></a>
             </div>
         </div>
     </div>
 </nav>
-<div class="container">
-    <h1 class="text-dark mb-2">Steps Calculator</h1>
-    <div class="col-md-4 mx-auto">
-        <input id="isRunning" type="checkbox" class="form-check-input" title="Use running step length"
-               onclick="toggleRunningStepLength()">
-        <label for="isRunning" class="text-dark">Running step length</label>
-        <br>
-        <small class="text-dark">*<i>The conversion between steps and kilometers is based on an average male walking
-            step length of 0.78 meters, and my own measured average running step length of 1.05 meters.</i></small>
-    </div>
-    <div class="card text-dark border-dark col-md-4 mx-auto mt-4">
-        <div class="card-body">
-            <h4 class="card-title">Steps to Km</h4>
-            <div class="form-group pt-3 pb-2">
-                <input id="stepsValue" type="number" placeholder="Number of steps" class="form-control"
-                       aria-describedby="numberHelp" oninput="getKilometers()" autofocus/>
+<main class="container calc-page">
+    <section>
+        <h1 class="mb-1">Steps Calculator</h1>
+        <p class="text-body-secondary mb-4">Walking step length 0.78 m (average male), running step length 1.05 m (my own
+            measured average)</p>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card calc-card h-100">
+                    <div class="card-body">
+                        <label for="stepsValue" class="form-label">Steps to km</label>
+                        <input id="stepsValue" class="form-control form-control-lg" type="text" inputmode="numeric"
+                               placeholder="Number of steps" autocomplete="off" autofocus/>
+                        <div class="row g-2 mt-2">
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="result-label">Walking</div>
+                                    <div id="walkingKm" class="result-value">–</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="result-label">Running</div>
+                                    <div id="runningKm" class="result-value">–</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card calc-card h-100">
+                    <div class="card-body">
+                        <label for="kmValue" class="form-label">Km to steps</label>
+                        <input id="kmValue" class="form-control form-control-lg" type="text" inputmode="decimal"
+                               placeholder="Kilometers" autocomplete="off" data-decimals/>
+                        <div class="row g-2 mt-2">
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="result-label">Walking</div>
+                                    <div id="walkingSteps" class="result-value">–</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="result-label">Running</div>
+                                    <div id="runningSteps" class="result-value">–</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="stepsInKmAnswer" class="card-footer p-3 hideElement">
-            <h5 id="stepsInKmChange" class="font-monospace">
-            </h5>
-        </div>
-    </div>
-    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
-        <div class="card-body">
-            <h4 class="card-title">Km to steps</h4>
-            <div class="form-group pt-3 pb-2">
-                <input id="kmValue" type="number" placeholder="Kilometers" class="form-control"
-                       aria-describedby="numberHelp" oninput="getSteps()" autofocus/>
+    </section>
+
+    <section class="mt-5">
+        <h1 class="mb-4">Percentage Calculator</h1>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card calc-card h-100">
+                    <div class="card-body">
+                        <h2 class="form-label">Percentage change</h2>
+                        <label for="initialValue" class="visually-hidden">Initial value</label>
+                        <input id="initialValue" class="form-control form-control-lg mb-2" type="text"
+                               inputmode="decimal" placeholder="Initial value" autocomplete="off" data-decimals
+                               data-negative/>
+                        <label for="finalValue" class="visually-hidden">Final value</label>
+                        <input id="finalValue" class="form-control form-control-lg" type="text" inputmode="decimal"
+                               placeholder="Final value" autocomplete="off" data-decimals data-negative/>
+                        <div class="row g-2 mt-2">
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="result-label">Change</div>
+                                    <div id="changePercent" class="result-value">–</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="result-label">Difference</div>
+                                    <div id="changeDiff" class="result-value">–</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card calc-card h-100">
+                    <div class="card-body">
+                        <h2 class="form-label">Add or subtract a percentage</h2>
+                        <label for="baseValue" class="visually-hidden">Initial value</label>
+                        <input id="baseValue" class="form-control form-control-lg mb-2" type="text"
+                               inputmode="decimal" placeholder="Initial value" autocomplete="off" data-decimals
+                               data-negative/>
+                        <label for="percentValue" class="visually-hidden">Percentage</label>
+                        <input id="percentValue" class="form-control form-control-lg" type="text" inputmode="decimal"
+                               placeholder="Percentage (%)" autocomplete="off" data-decimals/>
+                        <div class="row g-2 mt-2">
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <div id="plusLabel" class="result-label">Added</div>
+                                        <div id="plusDiff" class="result-sub"></div>
+                                    </div>
+                                    <div id="plusResult" class="result-value">–</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="result">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <div id="minusLabel" class="result-label">Subtracted</div>
+                                        <div id="minusDiff" class="result-sub"></div>
+                                    </div>
+                                    <div id="minusResult" class="result-value">–</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="kmFromStepsAnswer" class="card-footer p-3 hideElement">
-            <h5 id="kmFromStepsChange" class="font-monospace">
-            </h5>
-        </div>
-    </div>
-    <h1 class="text-dark mt-5">Difference Calculator</h1>
-    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
-        <div class="card-body">
-            <h4 class="card-title">Percentage Change</h4>
-            <div class="form-group pt-3 pb-2">
-                <input id="initialValue" type="number" placeholder="Initial value" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(true)" autofocus/>
-            </div>
-            <div class="form-group py-2">
-                <input id="finalValue" type="number" placeholder="Final value" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(true)">
-            </div>
-        </div>
-        <div id="percentageAnswerChange" class="card-footer p-3 hideElement">
-            <h5 id="percentageResultChange" class="font-monospace">
-            </h5>
-        </div>
-        <div id="diffAnswerChange" class="card-footer p-3 hideElement">
-            <h5 id="diffResultChange" class="font-monospace">
-            </h5>
-        </div>
-    </div>
-    <div class="card text-dark border-dark col-md-4 mx-auto mt-5">
-        <div class="card-body">
-            <h4 class="card-title">Percentage Difference</h4>
-            <div class="form-group pt-3 pb-2">
-                <input id="valueA" type="number" placeholder="Value A" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(false)"/>
-            </div>
-            <div class="form-group py-2">
-                <input id="valueB" type="number" placeholder="Value B" class="form-control"
-                       aria-describedby="numberHelp" oninput="getDifference(false)">
-            </div>
-        </div>
-        <div id="percentageAnswer" class="card-footer p-3 hideElement">
-            <h5 id="percentageResult" class="font-monospace">
-            </h5>
-        </div>
-        <div id="diffAnswer" class="card-footer p-3 hideElement">
-            <h5 id="diffResult" class="font-monospace">
-            </h5>
-        </div>
-    </div>
-</div>
+    </section>
+</main>
 </body>
+</html>

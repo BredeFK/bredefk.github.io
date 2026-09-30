@@ -1,3 +1,15 @@
+[data-bs-theme=dark] {
+    --bs-body-bg: #16191c;
+    --bs-body-bg-rgb: 22, 25, 28;
+    --bs-body-color: #e9ecef;
+    --bs-body-color-rgb: 233, 236, 239;
+    --bs-secondary-color: #9aa3ab;
+    --bs-tertiary-bg: #212529;
+    --bs-tertiary-bg-rgb: 33, 37, 41;
+    --bs-border-color: #3a4148;
+    --bs-border-color-translucent: #2c3237;
+}
+
 body, html {
     height: 100%;
 }
@@ -13,132 +25,245 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-#isRunning:hover {
-    cursor: pointer;
-}
-
 #avatar {
+    display: block;
+    object-fit: cover;
     border-radius: 50%;
-    background-image: url('/resources/images/BredeFK_2.webp');
-    background-position: center;
-    background-size: cover;
     height: 200px;
     width: 200px;
     margin-left: auto;
     margin-right: auto;
+    border: 4px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-#avatar:hover {
-    background-image: url('/resources/images/BredeFK.webp');
+.hero-name {
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+    color: #111;
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
 }
 
 .parallax {
-    /* The image used */
-    background-image: url("/resources/images/background-image.webp");
+    position: relative;
+    clip-path: inset(0);
+    height: 75svh;
+}
 
-    /* Set a specific height */
-    height: 75%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.parallax::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: 100lvh;
+    background: url("/resources/images/background-image.webp") center / cover no-repeat;
+    z-index: -1;
 }
 
 .container {
     margin: 0 auto;
     text-align: center;
-    color: white;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .demo {
-    height: 1000px;
-    background-color: #535c54;
-    padding: 30px;
-    color: black;
+    min-height: 60vh;
+    padding: 40px 30px 60px;
 }
 
 .demo-title {
     font-size: 36px;
 }
 
-.a-white {
-    color: white;
-}
-
-.a-white:hover {
-    color: darkgrey;
-}
-
-.a-white:active {
-    color: black;
-}
-
-.nav-bar {
-    padding: 20px 0 20px 20px;
-    text-align: center;
+.navbar img[src$="github.svg"] {
+    filter: invert(1);
 }
 
 .font-orbitron {
     font-family: 'Orbitron', sans-serif;
 }
 
-.hideElement {
-    display: none;
+.card {
+    --bs-card-border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.bgColor {
-    background-color: #cecece;
+#cards {
+    max-width: 800px;
+}
+
+#cards .card {
+    --bs-card-bg: var(--bs-tertiary-bg);
+    border-top: 3px solid var(--accent);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+#cards .card:hover,
+#cards .card:focus-visible {
+    transform: translateY(-4px);
+    background-color: color-mix(in srgb, var(--accent) 12%, var(--bs-tertiary-bg));
+    border-color: var(--accent);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+#cards .card:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.calc-page,
+.songs-page {
+    max-width: 960px;
+}
+
+.song-card,
+.calc-card {
+    text-align: left;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+#table-of-contents ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+#table-of-contents a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background-color: var(--bs-tertiary-bg);
+    border: 1px solid var(--bs-border-color-translucent);
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+
+#table-of-contents a::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+#table-of-contents a:hover,
+#table-of-contents a:focus-visible {
+    background-color: color-mix(in srgb, var(--accent) 18%, var(--bs-tertiary-bg));
+    border-color: var(--accent);
+    color: var(--bs-emphasis-color);
+}
+
+.song-card {
+    --bs-card-bg: #343a40;
+    --bs-card-border-color: #454c53;
+    border-top: 3px solid var(--accent);
+}
+
+#file-list {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: minmax(0, max-content);
+    justify-content: center;
+}
+
+#file-list .card {
+    scroll-margin-top: 20px;
+}
+
+.song-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
 }
 
 .song {
-    color: black;
     font-family: monospace;
-    overflow: auto;
     line-height: 1em
 }
 
-ul {
-    display: table;
+.song a {
+    color: var(--accent);
+}
+
+.song pre {
+    --columns: 74;
+    background-color: #d9d4ca;
+    border-left: 4px solid var(--accent);
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
+    overflow-x: auto;
+    font-size: min(0.95rem, (100cqi - 3.5rem) / (var(--columns) * 0.61));
+    line-height: 1.35;
+    color: #4d5257;
 }
 
-div.card {
-    background-color: lightblue;
+.song .fret {
+    color: #111111;
+    font-weight: 700;
 }
 
-.video {
-    height: 304px;
-    width: 540px;
+.song-note {
+    font-family: var(--bs-body-font-family), sans-serif;
+    font-size: 0.85rem;
+    color: #b8c0c7;
+    margin: 0.75rem 0;
 }
 
-/* TODO : Merge these four classes in to two classes */
-.card button.btn-dark-blue {
-    background-color: #547EA8;
-    color: black
+.calc-card {
+    --bs-card-bg: var(--bs-tertiary-bg);
 }
 
-.card a.btn-dark-blue {
-    background-color: #547EA8;
-    color: black
+.calc-card .form-label {
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.card button.btn-dark-blue:hover {
-    background-color: #436486;
-    color: black
+.calc-card .form-control {
+    font-variant-numeric: tabular-nums;
 }
 
-.card a.btn-dark-blue:hover {
-    background-color: #436486;
-    color: black
+.calc-card .form-control:focus {
+    border-color: #7fa6cc;
+    box-shadow: 0 0 0 0.25rem rgba(84, 126, 168, 0.35);
 }
 
+.result {
+    background-color: rgba(84, 126, 168, 0.14);
+    border-left: 3px solid #7fa6cc;
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.9rem;
+}
+
+.result-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bs-secondary-color);
+}
+
+.result-value {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--bs-emphasis-color);
+    font-variant-numeric: tabular-nums;
+}
+
+.result-sub {
+    font-size: 0.8rem;
+    color: var(--bs-secondary-color);
+    font-variant-numeric: tabular-nums;
+}
 
 @media only screen and (max-width: 800px) {
-    .song {
-        font-size: 10px;
+    .song pre {
+        padding: 0.75rem;
     }
 
     div.card-body {
@@ -154,64 +279,4 @@ div.card {
         padding-right: 5px;
         padding-left: 5px;
     }
-
-    .video {
-        height: 169px;
-        width: 300px;
-    }
-
-    .btn-dark-blue {
-        margin-bottom: 15px;
-    }
-
 }
-
-#ticking-bomb-game-body {
-    background-color: #121212;
-    color: white;
-}
-
-#bomb-title {
-    font-family: 'Orbitron', sans-serif;
-}
-
-#timer {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-#passButton {
-    background-color: #007bff;
-    border-color: #007bff;
-    font-size: 1.2rem;
-}
-
-#passButton:disabled {
-    background-color: #ff3333;
-    border-color: #ff3333;
-    cursor: not-allowed;
-}
-
-/* Button Fade-Out */
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-}
-
-/* Button Pulse Effect */
-.pulse-animation {
-    animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-

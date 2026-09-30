@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Fritjof's Homepage">
     <meta name="author" content="Brede Fritjof Klausen">
 
-    <link id="favicon1" rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-    <link id="favicon2" rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-    <link id=favicon3" rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-    <link id="manifest" rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,38 +17,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 
     <title>Guitar Tabs</title>
-    <link href="../css/styles.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link href="../css/styles.css" rel="stylesheet">
     <script src="../js/song.js"></script>
 </head>
-<body class="bgColor">
-<nav class="navbar navbar-expand-lg bg-light">
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main">
     <div class="container-fluid">
-        <a class="navbar-brand text-black font-orbitron" href="/">Fritjof</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        <a class="navbar-brand font-orbitron" href="/">Fritjof</a>
+        <button class="navbar-toggler" type="button"
+                onclick="this.setAttribute('aria-expanded', document.getElementById('navbarNavAltMarkup').classList.toggle('show'))"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link text-black" href="projects.html">Projects</a>
-                <a class="nav-link text-black" href="ticking-bomb-game.html">Bomb-Game</a>
-                <a class="nav-link text-black" href="calculator.html">Calculator</a>
-                <a class="nav-link text-black" href="songs.html">Songs</a>
-                <a class="nav-link text-black" target="_blank" href="https://www.erdettirsdag.eu/">Er-det-tirsdag?
-                    <img src="../resources/images/icons/tuesday.jpg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
-                <a class="nav-link text-black" target="_blank" href="https://github.com/BredeFK/bredefk.github.io">Source
-                    <img src="../resources/images/icons/github.svg" alt="Github logo" height="16" width="16" class="mb-1"/></a>
+                <a class="nav-link" href="calculator.html">Calculator</a>
+                <a class="nav-link active" aria-current="page" href="songs.html">Songs</a>
+            </div>
+            <div class="navbar-nav ms-lg-auto">
+                <a class="nav-link" target="_blank" rel="noopener" href="https://www.erdettirsdag.eu/">
+                    <img src="../resources/images/icons/tuesday.png" alt="" height="16" width="16" class="mb-1 me-1"/>Er det tirsdag?
+                    <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></a>
+                <a class="nav-link" target="_blank" rel="noopener" href="https://github.com/BredeFK/bredefk.github.io">
+                    <img src="../resources/images/icons/github.svg" alt="" height="16" width="16" class="mb-1 me-1"/>GitHub
+                    <span aria-hidden="true">↗</span><span class="visually-hidden">(opens in a new tab)</span></a>
             </div>
         </div>
     </div>
 </nav>
-<div class="container">
-    <h1 class="text-dark">Guitar Tabs</h1>
-    <h5 class="text-black">A collection of guitar tabs I've picked up from different places</h5>
-    <div class="text-black mt-4 mb-4" id="table-of-contents"></div>
-    <div class="row" id="file-list"></div>
-</div>
+<main class="container songs-page">
+    <h1 class="mb-1">Guitar Tabs</h1>
+    <p class="text-body-secondary mb-4">A collection of guitar tabs I've picked up from different places</p>
+    <nav class="mb-4" id="table-of-contents" aria-label="Songs"></nav>
+    <div id="file-list"></div>
+</main>
 </body>
